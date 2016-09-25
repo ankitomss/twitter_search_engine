@@ -1,0 +1,119 @@
+<script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script src='/static/search_ui/js/main.js'></script>
+<html class="google-js" lang="en">
+   <!--<script type="text/javascript" src="/static/search_ui/js/googlesearch.js">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script>-->
+   <head>
+      <meta charset="utf-8">
+      <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+      <title>Search</title>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en" rel="stylesheet">
+      <link href="https://www.google.com/work/search/css/search.min.css" rel="stylesheet">
+      <meta content="NOODP,NOYDIR" name="robots">
+       <style type="text/css">
+            .next_search {
+                text-align: center;
+                <!--background-color: yellow;-->
+                position: absolute;
+                top: 50%;
+            }
+            .search_form {
+                background-color: yellow;
+
+            }
+        </style>
+   </head>
+   <body style="top:0px;margin:0px;padding:5px;">
+      <div id="maia-main" role="main" style="top:0px;margin:0px;padding:5px;">
+         <div class="maia-teleport" id="content" style="top:0px;margin:0px;padding:5px;" ></div>
+         <br class="clearfix">
+         <div class="centered max-width try-search scroll-section" data-section-label="Try search" style="top:0px;margin:0px;padding:5px;">
+            <!--<form id="search_form" name="search_form" onsubmit="return false;">-->
+               <!--<input data-g-action="URL Entry" data-g-event="Search: Products" data-g-label="Site Search: Sample Search" id="search_url" name="search_url" value="rayanthony.io" placeholder="Enter your website's URL" type="text">-->
+               <!--<input data-g-action="Search Text Entry" data-g-event="Search: Products" data-g-label="Site Search: Sample Search" id="search_term" name="search_term" placeholder="Enter a search phrase" type="text"><br>-->
+               <!--<input class="maia-button" data-g-action="Search Button" data-g-event="Search: Products" data-g-label="Site Search: Sample Search" id="search_submit" type="submit" value="Search">-->
+            <!--</form>-->
+             <div class="result">
+            <form role="form" action="" method="post" id="post-form">
+               {% csrf_token %}
+                {{form}}
+                <input class="maia-button" data-g-action="Search Button" data-g-event="Search: Products" data-g-label="Site Search: Sample Search" id="search_submit" type="submit" value="Search">
+            </form>
+             </div>
+
+            <div id="search_results">
+                <div id="all_result"></div>
+                <b><div class="result" id="search_count"></div></b>
+               <div class="result" id="search0">
+                  <a class="third_page" href="" target="user0"></a><a href="http://rayanthony.io/extensions/xframeassassin/index.html" target="link_user0" class="result_url"></a>
+                  <p class="snippet" id="search0_snippet">
+                  </p>
+               </div>
+               <div class="result" id="search1">
+                  <a class="third_page" href="http://rayanthony.io/extensions/index.html" target="user1"></a><a href="http://rayanthony.io/extensions/index.html" target="link_user1" class="result_url"></a>
+                  <p class="snippet" id="search1_snippet">
+                  </p>
+               </div>
+               <div class="result" id="search2">
+                  <a class="third_page" href="http://rayanthony.io/" target="user2"></a><a href="http://rayanthony.io/" target="link_user2" class="result_url"></a>
+                  <p class="snippet" id="search2_snippet">
+                  </p>
+               </div>
+                <div class="result" id="search3">
+                  <a class="third_page" href="http://rayanthony.io/" target="user3"></a><a href="http://rayanthony.io/" target="link_user3" class="result_url"></a>
+                  <p class="snippet" id="search3_snippet">
+                  </p>
+               </div>
+                <div class="result" id="search4">
+                  <a class="third_page" href="http://rayanthony.io/" target="user4"></a><a href="http://rayanthony.io/" target="link_user4" class="result_url"></a>
+                  <p class="snippet" id="search4_snippet">
+                  </p>
+               </div>
+                <div class="result" id="search5">
+                  <a class="third_page" href="http://rayanthony.io/" target="user5"></a><a href="http://rayanthony.io/" target="link_user5" class="result_url"></a>
+                  <p class="snippet" id="search5_snippet">
+                  </p>
+               </div>
+                <div class="result" id="search6">
+                  <a class="third_page" href="http://rayanthony.io/" target="user6"></a><a href="http://rayanthony.io/" target="link_user6" class="result_url"></a>
+                  <p class="snippet" id="search6_snippet">
+                  </p>
+               </div>
+                <div class="result" id="search7">
+                  <a class="third_page" href="http://rayanthony.io/" target="user7"></a><a href="http://rayanthony.io/" target="link_user7" class="result_url"></a>
+                  <p class="snippet" id="search7_snippet">
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div id="maia-signature"></div>
+         <!--<script src="https://google.com/work/search/js/enterprise.search.min.js"></script>-->
+         <!--<script>-->
+            <!--new lfl.ui.ScrollNav({});-->
+              <!--new enterprise.search.GSSPage();-->
+
+         <!--</script>-->
+
+      </div>
+      </div>
+      <div id="link_generation" class="next_search">
+
+      </div>
+      <span tabindex="0" style="display: none; position: absolute;"></span>
+      <!--<script src="https://www.google.com/js/maia.js"></script>-->
+      <!--<script>(function() {new enterprise.search.GlobalSiteSearch();})();</script>-->
+      <!--  <script type="text/javascript">
+         function startSearch(event) {
+           if (event.target.results.length > 1) {
+             var second = event.target.results[1].utterance;
+             document.getElementById("second_best").value = second;
+           }
+           event.target.form.submit();
+         }
+         </script>
+
+         <form action="http://www.google.com/search">
+         <input type="search" name="q" speech required onspeechchange="startSearch">
+         <input type="hidden" name="second_best" id="second_best">
+         </form>-->
+   </body>
+</html>

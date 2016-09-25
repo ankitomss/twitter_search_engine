@@ -1,0 +1,13 @@
+%p.strong You searched for: {{ query }}
+
+- if result
+    %p There were ={num_results} found
+    %p results shown
+    - for doc in result.docs
+        %ul
+        - if doc.id
+            %li id is {{doc.id}}
+        - if doc.text
+            %li text is {{doc.text}}
+- else
+    %p No result found for the query
